@@ -2,12 +2,20 @@ import urllib
 import requests
 from bs4 import BeautifulSoup
 from configparser import ConfigParser
+import sqlalchemy as db
 
 parser = ConfigParser()
 parser.read('config.txt')
 URL = (parser.get('Default', 'URL'))
 USER_AGENT = (parser.get('Default', 'USER_AGENT'))
 headers = {"user-agent": USER_AGENT}
+
+engine = db.create_engine('mysql+pymysql://root:@localhost/screen_scraper')
+connection = engine.connect()
+metadata = db.MetaData()
+census = db.Table('census', metadata, autoload=True, autoload_with=engine)
+# Print the column names
+print(census.columns.keys())
 
 
 # function to get page data

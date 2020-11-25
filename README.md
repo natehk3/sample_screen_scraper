@@ -5,6 +5,8 @@ Basic CLI usage instructions
 ```bash
 # Setup requirements
 pip install -r requirements.txt
+# install mysql connector for the SQLAlchemy library
+pip install pymysql
 # Invoke search
 python search.py
 ```
