@@ -1,10 +1,11 @@
 # sample_screen_scraper
 sample_screen_scraper
 
-Install requirements
+Basic CLI usage instructions
 ```bash
+# Setup requirements
 pip install -r requirements.txt
-# imvoke search
+# Invoke search
 python search.py
 ```
 
